@@ -13,21 +13,21 @@
     "authors": [
         {
             "name": "Marcelo Oliveira",
-            "email": "marcelo@marceloweb.info",
-            "role": "developer"
+            "email": "marcelo@marceloweb.info"
         },
 	{
             "name": "Andrey Hurpia",
-            "email": "ahrocha@gmail.com",
-            "role": "developer"
+            "email": "ahrocha@gmail.com"
         },
 	{
             "name": "Felipe Santos",
-            "email": "felipe.campos.programador@gmail.com",
-            "role": "developer"
+            "email": "felipe.campos.programador@gmail.com"
         }
     ],
     "require": {
 	"php": "7.*"
+    },
+    "autoload": {
+        "psr-4": {"RestfulService\\": "src/"}
     }
 }
