@@ -1,0 +1,32 @@
+{
+    "name": "restfulservice/restfulservice",
+    "description": "Library that provides restful resource for PHP.",
+    "type": "library",
+    "keywords": [
+        "restful",
+        "http",
+        "php"
+    ],
+    "homepage": "https://github.com/marceloweb/RestfulService",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Marcelo Oliveira",
+            "email": "marcelo@marceloweb.info",
+            "role": "developer"
+        },
+	{
+            "name": "Andrey Hurpia",
+            "email": "",
+            "role": "developer"
+        },
+	{
+            "name": "Felipe Santos",
+            "email": "",
+            "role": "developer"
+        }
+    ],
+    "require": {
+	"php": "^5.5"
+    }
+}
