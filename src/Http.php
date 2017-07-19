@@ -34,10 +34,6 @@ class Http
         }
 
         $server_output = curl_exec($ch);
-        
-        if ($server_output === false) {
-            self::writeToLog([curl_error($ch), $endpoint, $headers, $fields]);
-        }
 
         curl_close($ch);
 
@@ -66,11 +62,6 @@ class Http
         }
 
         $server_output = curl_exec($ch);
-        
-        if ($server_output === false) {
-            self::writeToLog([curl_error($ch), $endpoint, $headers, $fields]);
-        }
-
 
         curl_close($ch);
 
@@ -91,10 +82,6 @@ class Http
             }
         }
         $server_output = curl_exec($ch);
-        
-        if ($server_output === false) {
-            self::writeToLog([curl_error($ch), $endpoint, $headers]);
-        }
         
         curl_close($ch);
         return ( $server_output );
@@ -121,10 +108,6 @@ class Http
         }
 
         $server_output = curl_exec($ch);
-        
-        if ($server_output === false) {
-            self::writeToLog([curl_error($ch), $endpoint, $headers]);
-        }
 
         curl_close($ch);
         return ( $server_output );
@@ -154,10 +137,6 @@ class Http
             'Content-Length: ' . strlen($fields)));
 
         $server_output = curl_exec($ch);
-        
-        if ($server_output === false) {
-            self::writeToLog([curl_error($ch), $endpoint, $headers, $fields]);
-        }
 
         curl_close($ch);
 
@@ -192,8 +171,4 @@ class Http
         return $parsedHeader['reponse_code'];
     }
 
-    public static function writeToLog($content)
-    {
-        NeoErrorLogger::post($content);
-    }
 }
