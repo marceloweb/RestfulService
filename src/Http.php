@@ -68,13 +68,18 @@ class Http
         return ( $server_output );
     }
 
-    public static function get($endpoint, array $headers)
+    public static function get($endpoint, array $headers, $getHeader = false)
     {
 
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, $endpoint);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        if ($getHeader) {
+            curl_setopt($ch, CURLOPT_VERBOSE, true);
+            curl_setopt($ch, CURLOPT_HEADER, true);
+        }
 
         if (!is_null($headers)) {
             foreach ($headers as $header) {
@@ -113,7 +118,7 @@ class Http
         return ( $server_output );
     }
 
-    public static function json($endpoint, $headers, array $fields)
+    public static function json($endpoint, $headers, array $fields, $getHeader = false)
     {
         $fields = json_encode($fields);
 
@@ -121,6 +126,11 @@ class Http
 
         curl_setopt($ch, CURLOPT_URL, $endpoint);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+        if ($getHeader) {
+            curl_setopt($ch, CURLOPT_VERBOSE, true);
+            curl_setopt($ch, CURLOPT_HEADER, true);
+        }
 
         if (!is_null($headers)) {
             foreach ($headers as $header) {
