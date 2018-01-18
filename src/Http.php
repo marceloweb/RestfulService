@@ -4,10 +4,8 @@ namespace RestfulService;
 
 class Http
 {
-
     public $header;
     public $body;
-    
     public $ch;
     public $endpoint;
     public $fields;
@@ -36,7 +34,6 @@ class Http
         }
 
         $server_output = curl_exec($ch);
-
         curl_close($ch);
 
         return ( $server_output );
@@ -66,7 +63,6 @@ class Http
         }
 
         $server_output = curl_exec($ch);
-
         curl_close($ch);
 
         return ( $server_output );
@@ -121,15 +117,14 @@ class Http
         }
 
         $server_output = curl_exec($ch);
-
         curl_close($ch);
-        return ( $server_output );
+	
+	return ( $server_output );
     }
 
     public static function json($endpoint, $headers, array $fields, $getHeader = false)
     {
         $fields = json_encode($fields);
-
         $ch = curl_init();
 
         curl_setopt($ch, CURLOPT_URL, $endpoint);
@@ -157,7 +152,6 @@ class Http
             'Content-Length: ' . strlen($fields)));
 
         $server_output = curl_exec($ch);
-
         curl_close($ch);
 
         return ( $server_output );
@@ -176,7 +170,8 @@ class Http
                     $head['reponse_code'] = intval($out[1]);
                 }
             }
-        }
+	}
+
         return $head;
     }
     
@@ -185,7 +180,6 @@ class Http
         if (is_string($data)) {
             list($data, $body) = explode("\r\n\r\n", $data, 2);
         }
-
         $parsedHeader = Http::parseHeaders(explode("\r\n", $data));
 
         return $parsedHeader['reponse_code'];
