@@ -7,7 +7,7 @@ class HttpTest extends TestCase {
 
    public function providerPost() {
       return array(
-         array('http://www.marceloweb.info/tests/http.php',array('Content-type: application/text'),array('whoareyou'=>'PHPUnit'))
+         array('http://www.marceloweb.info/tests/http.php',array('Content-type: application/text'),array('whoareyou'=>'fine'))
       );
    }
 
