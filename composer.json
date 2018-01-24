@@ -25,7 +25,7 @@
         }
     ],
     "require": {
-	"php": "7.*"
+	"php": "^5.*"
     },
     "autoload": {
         "psr-4": {"RestfulService\\": "src/"}
