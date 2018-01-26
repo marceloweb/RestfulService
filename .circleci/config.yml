@@ -1,0 +1,4 @@
+version: '2'
+services:
+    web:
+        image: circleci/php:7.0-fpm
