@@ -2,4 +2,4 @@ version: '2'
 jobs:
     build:
         docker:
-            image: circleci/php:7.0-fpm
+            - image: circleci/php:7.0-fpm
