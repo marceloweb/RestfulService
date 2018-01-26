@@ -5,4 +5,4 @@ jobs:
             - image: circleci/php:7.0-fpm
         steps:
             - run:
-                command: phpunit
+                command: php --version
