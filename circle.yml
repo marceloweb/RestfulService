@@ -1,9 +1,10 @@
-machine:
-  pre:
-    - sudo apt-get update; USE_PRECOMPILE=true sudo -E circleci-install php 7.1.0
-  php:
-    version: 7.1.0
+language: php
 
-test:
-  override:
-    - php --version
+sudo: false
+
+php:
+  - 7.1
+  - master
+  
+notifications:
+  email: true  
