@@ -7,7 +7,7 @@ class HttpTest extends TestCase {
 
    public function providerPost() {
       return array(
-         array('http://www.marceloweb.info/tests/http.php',array('Content-type: application/text'),array('whoareyou'=>'testing'))
+         array('http://www.marceloweb.info/tests/http.php',array(''),array('whoiam'=>'phpunit'))
       );
    }
 
@@ -17,7 +17,7 @@ class HttpTest extends TestCase {
    public function testPost($endpoint,$headers,$fields) {
       $result = Http::post($endpoint,$headers,$fields); 
       
-      $this->assertEquals($result,'fine');
+      $this->assertEquals($result,'success');
 
    }
 }
