@@ -8,7 +8,7 @@
         "php"
     ],
     "homepage": "https://github.com/marceloweb/RestfulService",
-    "license": "GPLv3",
+    "license": "GPL-3.0-only",
     "version": "1.0.5",
     "authors": [
         {
