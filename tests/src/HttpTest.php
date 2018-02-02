@@ -20,4 +20,28 @@ class HttpTest extends TestCase {
       $this->assertEquals($result,'success');
 
    }
+
+   public function testPut() {
+
+   }
+
+   public function testGet() {
+
+   }
+
+   public function testDelete() {
+
+   }
+
+   public function testJson() {
+
+   }
+
+   public function testParseHeaders() {
+
+   }
+
+   public function testGetHeaderCode() {
+
+   }
 }
