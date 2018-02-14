@@ -11,6 +11,12 @@ class HttpTest extends TestCase {
       );
    }
 
+   public function providerGet() {
+      return array(
+	  array('http://www.marceloweb.info/tests/http.php',array(''))
+      );
+   }
+
    /**
     * @dataProvider providerPost 
     */
@@ -25,8 +31,13 @@ class HttpTest extends TestCase {
 
    }
 
-   public function testGet() {
-
+   /**
+    * @dataProvider providerGet
+    */
+   public function testGet($endpoint,$headers) {
+       $result = Http::get($endpoint,$headers);
+      
+       $this->assertEquals($result,'fail');
    }
 
    public function testDelete() {
