@@ -4,12 +4,6 @@ namespace RestfulService;
 
 class Http
 {
-    public $header;
-    public $body;
-    public $ch;
-    public $endpoint;
-    public $fields;
-    public $headers;
 
     public static function post($endpoint, $headers, $fields, $getHeader = false)
     {
