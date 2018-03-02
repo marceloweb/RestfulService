@@ -13,7 +13,7 @@ class HttpTest extends TestCase {
 
    public function providerGet() {
       return array(
-	  array('http://www.marceloweb.info/tests/http.php',array(''))
+	  array('http://www.marceloweb.info/tests/http.php?whoiam=phpunit',array(''))
       );
    }
 
@@ -27,8 +27,13 @@ class HttpTest extends TestCase {
 
    }
 
-   public function testPut() {
+   /**
+    * @dataProvider providerPost
+    */
+   public function testPut($endpoint,$headers,$fields) {
+	$result = Http::put($endpoint,$headers,$fields);
 
+	$this->assertEquals($result,'put or delete');
    }
 
    /**
@@ -37,7 +42,7 @@ class HttpTest extends TestCase {
    public function testGet($endpoint,$headers) {
        $result = Http::get($endpoint,$headers);
       
-       $this->assertEquals($result,'fail');
+       $this->assertEquals($result,'success');
    }
 
    public function testDelete() {
