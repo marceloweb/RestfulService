@@ -1,4 +1,3 @@
-[![CircleCI](https://circleci.com/gh/marceloweb/RestfulService.svg?style=svg)](https://circleci.com/gh/marceloweb/RestfulService)
 [![Build Status](https://travis-ci.org/marceloweb/RestfulService.svg?branch=master)](https://travis-ci.org/marceloweb/RestfulService)
 
 # RestfulService
