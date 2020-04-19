@@ -2,18 +2,19 @@
 
 use PHPUnit\Framework\TestCase;
 use RestfulService\Http;
+use RestfulService\tests\Mocks;
 
 class HttpTest extends TestCase {
 
    public function providerPost() {
       return array(
-         array('http://www.marceloweb.info/tests/http.php',array(''),array('whoiam'=>'phpunit'))
+         array(Mocks::mockPost(1,''),array(''),array('whoiam'=>'phpunit'))
       );
    }
 
    public function providerGet() {
       return array(
-	  array('http://www.marceloweb.info/tests/http.php?whoiam=phpunit',array(''))
+	  array('/tests/http.php?whoiam=phpunit',array(''))
       );
    }
 
@@ -22,7 +23,7 @@ class HttpTest extends TestCase {
     */
    public function testPost($endpoint,$headers,$fields) {
       $result = Http::post($endpoint,$headers,$fields); 
-      
+print_r($result);      
       $this->assertEquals($result,'success');
 
    }
@@ -45,19 +46,4 @@ class HttpTest extends TestCase {
        $this->assertEquals($result,'success');
    }
 
-   public function testDelete() {
-
-   }
-
-   public function testJson() {
-
-   }
-
-   public function testParseHeaders() {
-
-   }
-
-   public function testGetHeaderCode() {
-
-   }
 }
